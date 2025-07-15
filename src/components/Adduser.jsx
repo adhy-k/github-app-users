@@ -16,6 +16,14 @@ const Adduser = () => {
                             <input type="text" className="form-control" />
                         </div>
                         <div className="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                            <label htmlFor="" className="form-label">Avatar URL</label>
+                            <input type="text" className="form-control" />
+                        </div>
+                        <div className="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                            <label htmlFor="" className="form-label">GravatarURL</label>
+                            <input type="text" className="form-control" />
+                        </div>
+                        <div className="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                             <label htmlFor="" className="form-label">URL</label>
                             <input type="text" className="form-control" />
                         </div>
@@ -29,22 +37,6 @@ const Adduser = () => {
                         </div>
                         <div className="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                             <label htmlFor="" className="form-label">Following URL</label>
-                            <input type="text" className="form-control" />
-                        </div>
-                        <div className="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-                            <label htmlFor="" className="form-label">Avathar URL</label>
-                            <input type="text" className="form-control" />
-                        </div>
-                        <div className="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-                            <label htmlFor="" className="form-label">Gravatar URL</label>
-                            <input type="text" className="form-control" />
-                        </div>
-                        <div className="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-                            <label htmlFor="" className="form-label">Html URL</label>
-                            <input type="text" className="form-control" />
-                        </div>
-                        <div className="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-                            <label htmlFor="" className="form-label">Followers URL</label>
                             <input type="text" className="form-control" />
                         </div>
                         <div className="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
