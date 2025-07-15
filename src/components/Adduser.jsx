@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Navbar from './Navbar'
 
 const Adduser = () => {
     const[input,changeInput]=useState(
@@ -12,6 +13,7 @@ const Adduser = () => {
     }
   return (
     <div>
+        <Navbar/>
         <div className="container-fluid">
             <div className="row">
                 <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
@@ -84,7 +86,7 @@ const Adduser = () => {
                             <label htmlFor="" className="form-label">User View Type</label>
                             <input type="text" className="form-control" name='UserViewType' value={input.UserViewType} onChange={inputHandler}/>
                         </div>
-                        <div className="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                        <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                             <div className="button btn btn-primary" onClick={readInput}>Submit</div>
                         </div>
                     </div>

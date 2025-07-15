@@ -1,28 +1,30 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import Navbar from './Navbar'
 
 const Viewusers = () => {
     const [user, changeUser] = useState([])
     const fetchdata = () => {
         axios.get("https://api.github.com/users").then(
             (req) => {
-                changeUser(req)
+                changeUser(req.data)
             }
         ).catch()
     }
     useEffect(() => { fetchdata() }, [])
     return (
         <div>
+            <Navbar/>
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                        <table class="table">
+                        <table class="table table-bordered">
                             <thead>
                                 <tr>
                                     <th scope="col">Id</th>
                                     <th scope="col">Node Id</th>
-                                    <th scope="col">Avatar UR</th>
-                                    <th scope="col">Gravatar UR</th>
+                                    <th scope="col">Avatar URL</th>
+                                    <th scope="col">Gravatar URL</th>
                                     <th scope="col">URL</th>
                                     <th scope="col">Html URL</th>
                                     <th scope="col">Followers URL</th>
