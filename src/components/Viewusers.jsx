@@ -3,21 +3,27 @@ import React, { useEffect, useState } from 'react'
 import Navbar from './Navbar'
 
 const Viewusers = () => {
+    const [load, changeLoad] = useState(true)
     const [user, changeUser] = useState([])
     const fetchdata = () => {
         axios.get("https://api.github.com/users").then(
             (req) => {
+                changeLoad(false)
                 changeUser(req.data)
             }
-        ).catch()
+        ).catch(() => {
+            alert("Something went wrong!!")
+        }
+        )
     }
     useEffect(() => { fetchdata() }, [])
     return (
         <div>
-            <Navbar/>
+            <Navbar />
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
@@ -41,34 +47,38 @@ const Viewusers = () => {
                                 </tr>
                             </thead>
                             {
-                                user.map(
-                                    (value, index) => {
-                                        return (
-                                            <tbody>
-                                                <tr>
-                                                    <th scope="row">{value.id}</th>
-                                                    <td>{value.node_id}</td>
-                                                    <td>{value.avatar_url}</td>
-                                                    <td>{value.gravatar_id}</td>
-                                                    <td>{value.urlt}</td>
-                                                    <td>{value.html_url}</td>
-                                                    <td>{value.followers_url}</td>
-                                                    <td>{value.following_url}</td>
-                                                    <td>{value.gists_url}</td>
-                                                    <td>{value.starred_url}</td>
-                                                    <td>{value.subscriptions_url}</td>
-                                                    <td>{value.organizations_url}</td>
-                                                    <td>{value.repos_url}</td>
-                                                    <td>{value.events_url}</td>
-                                                    <td>{value.received_events_url}</td>
-                                                    <td>{value.type}</td>
-                                                    <td>{value.user_view_type}</td>
-                                                </tr>
+                                load ? (<div class="spinner-grow text-primary" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>) : (<tbody>
+                                    {
+                                        user.map(
+                                            (value, index) => {
+                                                return (
 
-                                            </tbody>
+                                                    <tr>
+                                                        <th scope="row">{value.id}</th>
+                                                        <td>{value.node_id}</td>
+                                                        <td>{value.avatar_url}</td>
+                                                        <td>{value.gravatar_id}</td>
+                                                        <td>{value.urlt}</td>
+                                                        <td>{value.html_url}</td>
+                                                        <td>{value.followers_url}</td>
+                                                        <td>{value.following_url}</td>
+                                                        <td>{value.gists_url}</td>
+                                                        <td>{value.starred_url}</td>
+                                                        <td>{value.subscriptions_url}</td>
+                                                        <td>{value.organizations_url}</td>
+                                                        <td>{value.repos_url}</td>
+                                                        <td>{value.events_url}</td>
+                                                        <td>{value.received_events_url}</td>
+                                                        <td>{value.type}</td>
+                                                        <td>{value.user_view_type}</td>
+                                                    </tr>
+                                                )
+                                            }
                                         )
                                     }
-                                )
+                                </tbody>)
                             }
                         </table>
                     </div>
