@@ -59,7 +59,7 @@ const Viewusers = () => {
                                                         <tr>
                                                             <th scope="row">{value.id}</th>
                                                             <td>{value.node_id}</td>
-                                                            <td><img src={value.avatar_url} width="50"/></td>
+                                                            <td><img src={value.avatar_url} width="50" className='rounded-circle'/></td>
                                                             <td>{value.gravatar_id}</td>
                                                             <td><a href={value.url} class="link-primary" target="blank">URL</a></td>
                                                             <td><a href={value.html_url} class="link-primary" target="blank">HTML URL</a></td>
